@@ -1,0 +1,624 @@
+/* Complaint Status Styles */
+.compst-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+.compst-header {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.compst-header-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.compst-main-title {
+    color: #1a365d;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.compst-subtitle {
+    color: #718096;
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+    font-weight: 400;
+    max-width: 600px;
+}
+
+.compst-header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.compst-refresh-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.compst-refresh-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(66, 153, 225, 0.3);
+}
+
+.compst-refresh-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Stats Summary */
+.compst-stats-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.compst-stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.compst-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.compst-stat-icon {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #4fd1c7 0%, #319795 100%);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compst-stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.compst-stat-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    line-height: 1;
+}
+
+.compst-stat-label {
+    color: #718096;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Loading State */
+.compst-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.compst-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: compst-spin 1s linear infinite;
+}
+
+.compst-spinner-large {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #4299e1;
+    border-radius: 50%;
+    animation: compst-spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes compst-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.compst-empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.compst-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.compst-empty-state h3 {
+    color: #2d3748;
+    font-size: 1.8rem;
+    margin: 0 0 15px;
+}
+
+.compst-empty-state p {
+    color: #718096;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Complaints List */
+.compst-complaints-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Complaint Card */
+.compst-complaint-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 2px solid #f7fafc;
+    transition: all 0.3s ease;
+}
+
+.compst-complaint-card:hover {
+    transform: translateY(-5px);
+    border-color: #667eea;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+}
+
+.compst-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #f7fafc;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.compst-header-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.compst-complaint-id {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.compst-id-label {
+    background: #edf2f7;
+    color: #4a5568;
+    padding: 6px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.compst-id-number {
+    color: #2d3748;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.compst-complaint-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.compst-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.compst-meta-label {
+    background: #f7fafc;
+    color: #718096;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.compst-meta-value {
+    color: #2d3748;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.compst-urgency-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.compst-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.compst-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.compst-status-icon {
+    font-size: 1.2rem;
+}
+
+/* Issue Section */
+.compst-issue-section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #f7fafc;
+}
+
+.compst-section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4a5568;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.compst-label-icon {
+    font-size: 1.2rem;
+}
+
+.compst-issue-text {
+    color: #2d3748;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.1rem;
+    word-break: break-word;
+}
+
+/* Timeline Section */
+.compst-timeline-section {
+    margin-bottom: 25px;
+}
+
+.compst-timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
+.compst-timeline::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.compst-no-comments {
+    text-align: center;
+    padding: 40px 20px;
+    color: #718096;
+}
+
+.compst-no-comments-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+    display: block;
+}
+
+.compst-timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.compst-timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #e2e8f0;
+    z-index: 1;
+}
+
+.compst-current-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4299e1;
+}
+
+.compst-timeline-content {
+    flex: 1;
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 20px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.compst-timeline-content:hover {
+    background: #edf2f7;
+    transform: translateX(5px);
+}
+
+.compst-timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.compst-comment-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.compst-comment-status-icon {
+    font-size: 1rem;
+}
+
+.compst-timeline-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #718096;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.compst-date-icon {
+    font-size: 0.9rem;
+}
+
+.compst-timeline-text {
+    color: #2d3748;
+    line-height: 1.5;
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+}
+
+.compst-comment-author {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #718096;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.compst-author-icon {
+    font-size: 0.9rem;
+}
+
+/* Show More Button */
+.compst-show-more-container {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #f7fafc;
+}
+
+.compst-more-btn {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.compst-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.compst-btn-icon {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.compst-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.compst-footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.compst-info-icon {
+    font-size: 1.2rem;
+}
+
+.compst-info-text {
+    color: #718096;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .compst-container {
+        padding: 15px;
+    }
+    
+    .compst-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        gap: 15px;
+    }
+    
+    .compst-main-title {
+        font-size: 2.2rem;
+    }
+    
+    .compst-header-content {
+        min-width: auto;
+    }
+    
+    .compst-refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .compst-stats-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .compst-card-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .compst-header-left {
+        min-width: auto;
+    }
+    
+    .compst-complaint-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .compst-complaint-card {
+        padding: 20px;
+    }
+    
+    .compst-timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .compst-main-title {
+        font-size: 1.8rem;
+    }
+    
+    .compst-complaint-id {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .compst-status-badge {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .compst-issue-text {
+        font-size: 1rem;
+    }
+}

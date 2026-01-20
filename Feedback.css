@@ -1,0 +1,69 @@
+.feed-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feed-heading {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.feed-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feed-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.feed-select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.feed-textarea {
+  min-height: 120px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  resize: none;
+  font-size: 14px;
+}
+
+.feed-submit-btn {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.feed-submit-btn:hover {
+  background: #1e40af;
+}
+
+.feed-submit-btn:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+}
